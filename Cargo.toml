@@ -1,0 +1,13 @@
+[package]
+
+name = "mindjuice"
+version = "0.0.1-dev"
+authors = ["Dabo Ross <daboross@daboross.net>"]
+description = "A simple and easy-to-use brainfuck interpreter"
+
+documentation = "https://dabo.guru/rust/mindjuice/mindjuice/"
+repository = "https://github.com/daboross/mindjuice-rs"
+
+readme = "README.md"
+keywords = ["brainfuck", "brain", "mind", "juice", "interpreter"]
+license = "MIT/Apache-2.0"
