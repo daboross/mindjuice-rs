@@ -18,19 +18,24 @@
 //! use std::io;
 //!
 //! // parse_instructions will return Err() if there are any unmatched left or right brackets.
-//! // However, since we know that this program doesn't have any, using `.unwrap()` is fine.
+//! // Because we know this program doesn't have any unmatched brackets, using `.unwrap()` is fine.
 //! let instructions = mindjuice::parse_instructions("++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.".chars()).unwrap();
 //!
 //! let mut buffer = Vec::new();
-//! // First parameter is instructions, second is output buffer, third parameter is something to
-//! // provide input, fourth parameter is maximum iterations to take before returning.
-//! // Since this hello world program doesn't use the `,` command at all, we can just use
-//! // io::empty() as the input. Note that if we do this in a program which takes input, it will
-//! // loop indefinitely waiting to get input.
-//! mindjuice::execute_brainfuck(instructions, &mut buffer, io::empty(), 30000000u64).unwrap();
+//!
+//! // Execute the instructions!
+//! mindjuice::execute_brainfuck(instructions, // Instructions vec
+//!                             &mut buffer, // io::Write to send output to
+//!                             io::empty(), // io::Read to get input from
+//!                             30000000u64 // Maximum program iterations to run before returning
+//!                             ).unwrap();
 //!
 //! assert_eq!(&buffer[..], b"Hello World!\n");
 //! ```
+//!
+//! Note: Because the hello world program example doesn't use the `,` input command, we can use
+//! `io::empty()` as the input. However, if we provided `io::empty()` for a program which did use
+//! `,`, `execute_brainfuck()` would loop indefinitely waiting for input.
 
 use std::fmt;
 use std::iter;
