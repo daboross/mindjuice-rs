@@ -2,12 +2,14 @@
 
 name = "mindjuice"
 version = "0.1.0"
-authors = ["Dabo Ross <daboross@daboross.net>"]
+authors = ["David Ross <daboross@daboross.net>"]
 description = "A simple and easy-to-use brainfuck interpreter"
 
-documentation = "https://dabo.guru/rust/mindjuice/mindjuice/"
+documentation = "https://docs.rs/mindjuice/"
 repository = "https://github.com/daboross/mindjuice-rs"
-
 readme = "README.md"
-keywords = ["brainfuck", "brain", "mind", "juice", "interpreter"]
+
 license = "MIT/Apache-2.0"
+keywords = ["brainfuck", "brain", "mind", "juice", "interpreter"]
+
+include = ["Cargo.toml", "src/**/*", "LICENSE-MIT", "LICENSE-APACHE", "README.md"]
